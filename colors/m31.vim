@@ -109,12 +109,12 @@ call s:h("MatchParen", s:blue, "underline") " The character under the cursor or 
 "call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", s:_dark) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
 call s:h("Pmenu", s:none, s:dark) " Popup menu: normal item.
-call s:h("PmenuSel", s:black, s:blue) " Popup menu: selected item.
+call s:h("PmenuSel", s:dark, s:blue) " Popup menu: selected item.
 call s:h("PmenuSbar", s:none, s:dark) " Popup menu: scrollbar.
 call s:h("PmenuThumb", s:white) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", s:purple) " hit-enter prompt and yes/no questions
-call s:h("Search", s:black, s:yellow) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
-call s:h("QuickFixLine", s:black, s:yellow) " Current quickfix item in the quickfix window.
+call s:h("Search", s:blue) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+call s:h("QuickFixLine", s:dark, s:yellow) " Current quickfix item in the quickfix window.
 call s:h("SpecialKey", s:dark) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 call s:h("SpellBad", s:red, "underline") " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", s:_yellow) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
