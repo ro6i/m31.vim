@@ -33,7 +33,7 @@ let s:purple = 5
 let s:cyan = 6
 let s:white = 7
 let s:_dark = 8
-let s:c_red = 9
+let s:_red = 9
 let s:_green = 10
 let s:_yellow = 11
 let s:_blue = 12
@@ -43,7 +43,7 @@ let s:_white = 15
 
 "}}}
 
-call s:h("Comment", s:dark)
+call s:h("Comment", s:_dark)
 call s:h("Constant", s:cyan)
 call s:h("String", s:_yellow)
 call s:h("Character", s:green)
@@ -90,7 +90,7 @@ call s:h("ColorColumn", s:none, s:dark) " used for the columns set with 'colorco
 call s:h("Cursor", s:dark, s:blue) " the character under the cursor
 "call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
 call s:h("CursorColumn", s:dark) " the screen column that the cursor is in when 'cursorcolumn' is set
-call s:h("CursorLine", s:none, s:dark) " the screen line that the cursor is in when 'cursorline' is set
+call s:h("CursorLine", s:none, s:none) " the screen line that the cursor is in when 'cursorline' is set
 call s:h("Directory", s:blue) " directory names (and other special names in listings)
 call s:h("DiffAdd", s:none, s:green) " diff mode: Added line
 call s:h("DiffChange", s:none, s:yellow) " diff mode: Changed line
@@ -103,8 +103,8 @@ call s:h("Folded", s:_dark) " line used for closed folds
 "call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", s:yellow, s:dark) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
 call s:h("LineNr", s:dark) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-"call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("MatchParen", s:blue, "underline") " The character under the cursor or just before it, if it is a paired bracket, and its match.
+call s:h("CursorLineNr", s:_dark) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("MatchParen", s:blue, s:none, "underline") " The character under the cursor or just before it, if it is a paired bracket, and its match.
 "call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 "call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", s:_dark) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
@@ -116,7 +116,7 @@ call s:h("Question", s:purple) " hit-enter prompt and yes/no questions
 call s:h("Search", s:blue) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 call s:h("QuickFixLine", s:dark, s:yellow) " Current quickfix item in the quickfix window.
 call s:h("SpecialKey", s:dark) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
-call s:h("SpellBad", s:red, "underline") " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
+call s:h("SpellBad", s:red, s:none, "underline") " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", s:_yellow) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", s:_yellow) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", s:_yellow) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
