@@ -37,6 +37,7 @@ let s:blue = 4
 let s:purple = 5
 let s:cyan = 6
 let s:white = 7
+
 let s:_dark = 8
 let s:_red = 9
 let s:_green = 10
@@ -50,7 +51,7 @@ let s:none = "NONE"
 
 " }}}
 
-call s:h("Comment", s:_dark)
+call s:h("Comment", s:_white, s:none)
 call s:h("Constant", s:cyan)
 call s:h("String", s:_yellow)
 call s:h("Character", s:green)
@@ -88,11 +89,11 @@ call s:h("Todo", s:red)
 
 call s:h("Normal", s:white, s:none)
 
-call s:h("ColorColumn", s:none, s:dark)
+call s:h("ColorColumn", s:none, s:_dark)
 "call s:h("Conceal", {})
-call s:h("Cursor", s:dark, s:blue)
+call s:h("Cursor", s:_dark, s:blue)
 "call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
-call s:h("CursorColumn", s:dark)
+call s:h("CursorColumn", s:_dark)
 call s:h("CursorLine", s:none, s:none)
 call s:h("Directory", s:blue)
 call s:h("DiffAdd", s:dark, s:green)
@@ -100,17 +101,17 @@ call s:h("DiffChange", s:dark, s:yellow)
 call s:h("DiffDelete", s:dark, s:red)
 call s:h("DiffText", s:none, s:dark)
 call s:h("ErrorMsg", s:red)
-call s:h("VertSplit", s:dark)
-call s:h("Folded", s:_dark)
+call s:h("VertSplit", s:_dark)
+call s:h("Folded", s:_white)
 "call s:h("FoldColumn", {})
 "call s:h("SignColumn", {})
 call s:h("IncSearch", s:yellow, s:dark)
-call s:h("LineNr", s:_dark)
-call s:h("CursorLineNr", s:white)
-call s:h("MatchParen", s:_white, s:none, "underline")
+call s:h("LineNr", s:_white)
+call s:h("CursorLineNr", s:green)
+call s:h("MatchParen", s:_cyan, s:none, "underline,italic")
 "call s:h("ModeMsg", {})
 "call s:h("MoreMsg", {})
-call s:h("NonText", s:_dark)
+call s:h("NonText", s:_white)
 call s:h("Pmenu", s:none, s:dark)
 call s:h("PmenuSel", s:dark, s:blue)
 call s:h("PmenuSbar", s:none, s:dark)
@@ -118,7 +119,7 @@ call s:h("PmenuThumb", s:white)
 call s:h("Question", s:purple)
 call s:h("Search", s:_cyan, s:none, "underline")
 call s:h("QuickFixLine", s:dark, s:yellow)
-call s:h("SpecialKey", s:dark)
+call s:h("SpecialKey", s:_white)
 call s:h("SpellBad", s:red, s:none, "underline")
 call s:h("SpellCap", s:_yellow)
 call s:h("SpellLocal", s:_yellow)
@@ -129,7 +130,7 @@ call s:h("TabLine", s:dark)
 call s:h("TabLineFill", s:none)
 call s:h("TabLineSel", s:white)
 call s:h("Title", s:green)
-call s:h("Visual", s:none, s:dark)
+call s:h("Visual", s:none, s:_dark)
 call s:h("VisualNOS", s:blue)
 call s:h("WarningMsg", s:yellow)
 call s:h("WildMenu", s:dark, s:blue)
