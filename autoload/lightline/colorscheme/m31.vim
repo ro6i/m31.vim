@@ -9,7 +9,7 @@ let s:blue = [ s:none, 4 ]
 let s:purple = [ s:none, 5 ]
 let s:white = [ s:none, 7 ]
 let s:black = [ s:none, 0 ]
-let s:grey = [ s:none, 0 ]
+let s:grey = [ s:none, 8 ]
 let s:transparent = [ s:none, s:none ]
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
