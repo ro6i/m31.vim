@@ -94,7 +94,7 @@ call s:h("ColorColumn", s:none, s:_dark)
 call s:h("Cursor", s:_dark, s:blue)
 "call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
 call s:h("CursorColumn", s:_dark)
-call s:h("CursorLine", s:dark, s:none)
+call s:h("CursorLine", s:none, s:dark)
 call s:h("Directory", s:blue)
 call s:h("DiffAdd", s:dark, s:green)
 call s:h("DiffChange", s:dark, s:yellow)
