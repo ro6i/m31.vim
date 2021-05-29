@@ -9,7 +9,7 @@ endif
 
 let colors_name="m31"
 
-" highlighting function {{{
+" highlighting function
 "
 function! s:h(group, fg, ...)
   let l:ctermfg = a:fg
@@ -25,9 +25,7 @@ function! s:h(group, fg, ...)
     \ "cterm=" . l:cterm
 endfunction
 
-" }}}
-
-" terminal colors {{{
+" terminal colors
 "
 let s:dark = 0
 let s:red = 1
@@ -49,7 +47,6 @@ let s:_white = 15
 
 let s:none = "NONE"
 
-" }}}
 
 call s:h("Comment", s:_white, s:none)
 " call s:h("Constant", s:blue)
@@ -112,7 +109,7 @@ call s:h("Folded", s:_white)
 call s:h("SignColumn", s:none, s:none)
 call s:h("IncSearch", s:yellow, s:dark)
 call s:h("LineNr", s:_dark)
-call s:h("CursorLineNr", s:white)
+call s:h("CursorLineNr", s:_white)
 call s:h("MatchParen", s:_white, s:none, "underline,italic,bold")
 "call s:h("ModeMsg", {})
 "call s:h("MoreMsg", {})
@@ -135,9 +132,7 @@ call s:h("TabLine", s:dark)
 call s:h("TabLineFill", s:none)
 call s:h("TabLineSel", s:white)
 call s:h("Title", s:green)
-call s:h("Visual", s:none, s:dark)
+call s:h("Visual", s:none, s:_dark) ", "reverse")
 call s:h("VisualNOS", s:blue)
 call s:h("WarningMsg", s:yellow)
 call s:h("WildMenu", s:dark, s:blue)
-
-" }}}
