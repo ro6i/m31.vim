@@ -92,7 +92,7 @@ call s:h("Todo", s:red)
 call s:h("Normal", s:white, s:none)
 
 call s:h("ColorColumn", s:none, s:dark)
-"call s:h("Conceal", {})
+call s:h("Conceal", s:none, s:dark)
 call s:h("Cursor", s:_dark, s:blue)
 "call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
 call s:h("CursorColumn", s:none, s:dark)
