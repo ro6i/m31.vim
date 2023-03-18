@@ -22,28 +22,28 @@ function! s:h(group, fg, ...)
     \ "gui=NONE"
     \ "ctermfg=" . l:ctermfg
     \ "ctermbg=" . l:ctermbg
-    \ "cterm=" . l:cterm
+    \ "cterm="   . l:cterm
 endfunction
 
 " terminal colors
 "
-let s:dark = 0
-let s:red = 1
-let s:green = 2
-let s:yellow = 3
-let s:blue = 4
+let s:dark    = 0
+let s:red     = 1
+let s:green   = 2
+let s:yellow  = 3
+let s:blue    = 4
 let s:magenta = 5
-let s:cyan = 6
-let s:white = 7
+let s:cyan    = 6
+let s:white   = 7
 
-let s:_dark = 8
-let s:_red = 9
-let s:_green = 10
+let s:_dark   = 8
+let s:_red    = 9
+let s:_green  = 10
 let s:_yellow = 11
-let s:_blue = 12
+let s:_blue   = 12
 let s:_purple = 13
-let s:_cyan = 14
-let s:_white = 15
+let s:_cyan   = 14
+let s:_white  = 15
 
 let s:none = "NONE"
 
@@ -110,7 +110,7 @@ call s:h("SignColumn", s:none, s:none)
 call s:h("IncSearch", s:yellow, s:dark)
 call s:h("LineNr", s:_dark)
 call s:h("CursorLineNr", s:_white)
-call s:h("MatchParen", s:_white, s:none, "underline,italic,bold")
+call s:h("MatchParen", s:cyan, s:_dark)
 "call s:h("ModeMsg", {})
 "call s:h("MoreMsg", {})
 call s:h("NonText", s:_dark)
@@ -119,7 +119,7 @@ call s:h("PmenuSel", s:dark, s:blue)
 call s:h("PmenuSbar", s:none, s:dark)
 call s:h("PmenuThumb", s:white)
 call s:h("Question", s:magenta)
-call s:h("Search", s:_cyan, s:_dark)
+call s:h("Search", s:green, s:_dark)
 call s:h("QuickFixLine", s:none, s:dark)
 call s:h("SpecialKey", s:_white)
 call s:h("SpellBad", s:red, s:none, "underline")
