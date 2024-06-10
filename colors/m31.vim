@@ -25,109 +25,123 @@ function! s:h(group, fg, ...)
     \ "cterm="   . l:cterm
 endfunction
 
-" terminal colors
-"
-let s:dark    = 0
-let s:red     = 1
-let s:green   = 2
-let s:yellow  = 3
-let s:blue    = 4
-let s:magenta = 5
-let s:cyan    = 6
-let s:white   = 7
 
-let s:_dark   = 8
-let s:_red    = 9
-let s:_green  = 10
-let s:_yellow = 11
-let s:_blue   = 12
-let s:_purple = 13
-let s:_cyan   = 14
-let s:_white  = 15
+function s:d(...)
+  return (get(a:, 1, 0) * 8) + 0
+endfunction
 
-let s:none = "NONE"
+function s:r(...)
+  return (get(a:, 1, 0) * 8) + 1
+endfunction
 
-call s:h("Normal",         s:white, s:none)
+function s:g(...)
+  return (get(a:, 1, 0) * 8) + 2
+endfunction
 
-call s:h("Boolean",        s:_red)
-call s:h("Character",      s:green)
-call s:h("Comment",        s:_white, s:none)
-call s:h("Conditional",    s:yellow)
-call s:h("Constant",       s:_yellow)
-call s:h("Debug",          s:none)
-call s:h("Define",         s:magenta)
-call s:h("Delimiter",      s:none)
-call s:h("Error",          s:red)
-call s:h("Exception",      s:_purple)
-call s:h("Float",          s:cyan)
-call s:h("Function",       s:green)
-call s:h("Identifier",     s:white)
-call s:h("Ignore",         s:none)
-call s:h("Include",        s:_blue)
-call s:h("Keyword",        s:red)
-call s:h("Label",          s:white)
-call s:h("Macro",          s:magenta)
-call s:h("Normal",         s:white)
-call s:h("Number",         s:_green)
-call s:h("Operator",       s:_cyan)
-call s:h("PreCondit",      s:yellow)
-call s:h("PreProc",        s:magenta)
-call s:h("Repeat",         s:magenta)
-call s:h("Special",        s:blue)
-call s:h("SpecialChar",    s:none)
-call s:h("SpecialComment", s:_white)
-call s:h("SpecialKey",     s:_white)
-call s:h("Statement",      s:_red)
-call s:h("StorageClass",   s:_blue)
-call s:h("String",         s:_purple)
-call s:h("Structure",      s:yellow)
-call s:h("Tag",            s:_cyan)
-call s:h("Todo",           33)
-call s:h("Type",           s:yellow)
-call s:h("Typedef",        s:_yellow)
-call s:h("Underlined",     s:none, s:none, "underline")
+function s:y(...)
+  return (get(a:, 1, 0) * 8) + 3
+endfunction
 
-call s:h("ColorColumn",    s:none, 16)
-call s:h("Conceal",        s:none, s:none)
-call s:h("Cursor",         s:_dark, s:blue)
-call s:h("CursorColumn",   s:none, 16)
-call s:h("CursorLine",     s:none, 16)
-call s:h("Directory",      s:blue)
-call s:h("DiffAdd",        s:none, 18)
-call s:h("DiffChange",     s:none, 19)
-call s:h("DiffDelete",     s:red,  17)
-call s:h("DiffText",       s:none, s:dark)
-call s:h("ErrorMsg",       s:red)
-call s:h("VertSplit",      s:_dark)
-call s:h("Folded",         s:_white)
+function s:b(...)
+  return (get(a:, 1, 0) * 8) + 4
+endfunction
+
+function s:m(...)
+  return (get(a:, 1, 0) * 8) + 5
+endfunction
+
+function s:c(...)
+  return (get(a:, 1, 0) * 8) + 6
+endfunction
+
+function s:w(...)
+  return (get(a:, 1, 0) * 8) + 7
+endfunction
+
+let s:n= "NONE"
+
+call s:h("Normal",         s:w(), s:n)
+
+call s:h("Boolean",        s:r())
+call s:h("Character",      s:g())
+call s:h("Comment",        s:d(1), s:n)
+call s:h("Conditional",    s:y())
+call s:h("Constant",       s:y())
+call s:h("Debug",          s:n)
+call s:h("Define",         s:m())
+call s:h("Delimiter",      s:n)
+call s:h("Error",          s:r())
+call s:h("Exception",      s:m())
+call s:h("Float",          s:c())
+call s:h("Function",       s:g())
+call s:h("Identifier",     s:w())
+call s:h("Ignore",         s:n)
+call s:h("Include",        s:b())
+call s:h("Keyword",        s:r())
+call s:h("Label",          s:w())
+call s:h("Macro",          s:m())
+call s:h("Normal",         s:w())
+call s:h("Number",         s:g())
+call s:h("Operator",       s:c())
+call s:h("PreCondit",      s:y())
+call s:h("PreProc",        s:m())
+call s:h("Repeat",         s:m())
+call s:h("Special",        s:b())
+call s:h("SpecialChar",    s:n)
+call s:h("SpecialComment", s:d(1))
+call s:h("SpecialKey",     s:d(1))
+call s:h("Statement",      s:r())
+call s:h("StorageClass",   s:b())
+call s:h("String",         s:c())
+call s:h("Structure",      s:y())
+call s:h("Tag",            s:c())
+call s:h("Todo",           s:r(1))
+call s:h("Type",           s:y())
+call s:h("Typedef",        s:y(4))
+call s:h("Underlined",     s:n, s:n, "underline")
+
+call s:h("ColorColumn",    s:n, s:d(2))
+call s:h("Conceal",        s:n, s:n)
+call s:h("Cursor",         s:d(), s:b())
+call s:h("CursorColumn",   s:n, s:d(2))
+call s:h("CursorLine",     s:n, s:d(2))
+call s:h("Directory",      s:b())
+call s:h("DiffAdd",        s:n, s:r(2))
+call s:h("DiffChange",     s:n, s:y(2))
+call s:h("DiffDelete",     s:r(), s:r(2))
+call s:h("DiffText",       s:n, s:d())
+call s:h("ErrorMsg",       s:r())
+"call s:h("VertSplit",     47, s:d)
+call s:h("WinSeparator",   s:w(2), s:d(2))
+call s:h("Folded",         s:d(1))
 "call s:h("FoldColumn",    )
-call s:h("SignColumn",     s:none)
-call s:h("IncSearch",      s:none)
-call s:h("LineNr",         s:_dark)
-call s:h("CursorLineNr",   s:_white)
-call s:h("CurSearch",      0, 34)
-call s:h("MatchParen",     s:cyan, s:_dark)
-"call s:h("ModeMsg", )
-"call s:h("MoreMsg", )
-call s:h("NonText",        s:_dark)
-call s:h("Pmenu",          s:none, s:dark)
-call s:h("PmenuSel",       s:dark, s:blue)
-call s:h("PmenuSbar",      s:none, s:dark)
-call s:h("PmenuThumb",     s:white)
-call s:h("Question",       s:magenta)
-call s:h("Search",         67, 23)
-call s:h("QuickFixLine",   s:none, s:dark)
-call s:h("SpellBad",       s:red, s:none, "underline")
-call s:h("SpellCap",       s:_yellow)
-call s:h("SpellLocal",     s:_yellow)
-call s:h("SpellRare",      s:_yellow)
-call s:h("StatusLine",     s:white, s:_dark)
-call s:h("StatusLineNC",   s:dark)
-call s:h("TabLine",        s:dark)
-call s:h("TabLineFill",    s:none)
-call s:h("TabLineSel",     s:white)
-call s:h("Title",          s:_green)
-call s:h("Visual",         s:none, s:_dark) ", "reverse")
-call s:h("VisualNOS",      s:blue)
-call s:h("WarningMsg",     s:yellow)
-call s:h("WildMenu",       s:dark, s:blue)
+call s:h("SignColumn",     s:n)
+call s:h("IncSearch",      s:n)
+call s:h("LineNr",         s:d(3))
+call s:h("CursorLineNr",   s:d(1))
+call s:h("CurSearch",      s:n, s:b(2))
+call s:h("MatchParen",     s:w(1), s:d())
+call s:h("ModeMsg",        s:y())
+call s:h("MoreMsg",        s:r())
+call s:h("NonText",        s:d(3))
+call s:h("Pmenu",          s:n, s:d())
+call s:h("PmenuSel",       s:d(), s:b())
+call s:h("PmenuSbar",      s:n, s:d())
+call s:h("PmenuThumb",     s:w())
+call s:h("Question",       s:m())
+call s:h("QuickFixLine",   s:n, s:d())
+call s:h("Search",         s:y(1), s:w(2))
+call s:h("SpellBad",       s:r(), s:n, "underline")
+call s:h("SpellCap",       s:y())
+call s:h("SpellLocal",     s:y())
+call s:h("SpellRare",      s:y())
+call s:h("StatusLine",     s:w(), s:w(3))
+call s:h("StatusLineNC",   s:d())
+call s:h("TabLine",        s:d())
+call s:h("TabLineFill",    s:n)
+call s:h("TabLineSel",     s:w())
+call s:h("Title",          s:g())
+call s:h("Visual",         s:n, s:n, "reverse")
+call s:h("VisualNOS",      s:b())
+call s:h("WarningMsg",     s:y())
+call s:h("WildMenu",       s:d(), s:b())
