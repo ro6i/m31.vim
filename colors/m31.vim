@@ -63,7 +63,7 @@ let s:n= "NONE"
 call s:h("Normal",         s:w(), s:n)
 
 call s:h("Boolean",        s:r())
-call s:h("Character",      s:g())
+call s:h("Character",      s:b())
 call s:h("Comment",        s:d(1), s:n)
 call s:h("Conditional",    s:y())
 call s:h("Constant",       s:y())
